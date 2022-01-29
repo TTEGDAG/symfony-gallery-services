@@ -32,8 +32,12 @@
                                     <small class="text-muted">Dodał:{{photo.user.username}}</small>
                                     <p>
                                         {% if photo.user == app.user %}
-                                        <a href="{{ path('my_photos_remove', {'id':photo.id}) }}" class="badge badge-danger">Usuń</a>                                    
-                                        <a href="{{ path('my_photos_set_as_private', {'id':photo.id})}}" class="badge badge-primary">Ustaw prywatne</a>
+                                            <a href="{{ path('my_photos_remove', {'id':photo.id}) }}" class="badge badge-danger">Usuń</a>   
+                                            {% if photo.isPublic=='1' %}                                 
+                                                <a href="{{ path('my_photos_set_as_private', {'id':photo.id})}}" class="badge badge-primary">Ustaw prywatne</a>
+                                            {% else %}
+                                                <a href="{{ path('my_photos_set_as_public', {'id':photo.id})}}" class="badge badge-succes">Ustaw jako publiczne</a>
+                                            {% endif %}
                                         {% endif %}
                                     </p>
                                 </div>
