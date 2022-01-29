@@ -8,14 +8,11 @@
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
             <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/simpleLightBox.min.css') }}">
+
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-            <script src="{{ asset('assets/js/jquery-3.4.1.slim.min.js') }}"></script>
-            <script src="{{ asset('assets/js/poper.min.js') }}"></script>
-            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-        {% endblock %}
+
     </head>
     <body>
     <!-- NAV -->
@@ -60,5 +57,15 @@
         <snap class="d-block text-center text-white"> Symfony nauka - Image Host </snap>
         </div>
     </footer>
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+            <script src="{{ asset('assets/js/jquery-3.4.1.slim.min.js') }}"></script>
+            <script src="{{ asset('assets/js/poper.min.js') }}"></script>
+            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/simpleLightBox.min.js') }}"></script>
+            <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {% endblock %}
+
     </body>
 </html>
