@@ -22,7 +22,11 @@ class MyController extends AbstractController
      */
     public function index()
     {
-
+        $em = $this->getDoctrine()->getManager();
+        $myPhotos = $em->getRepository(Photo::class)->findBy(['user' => $this->getUser()]);
+        return $this->render('my/index.html.twig', [
+            'myPhotos' => $myPhotos
+        ]);
     }
 
     /**
@@ -47,7 +51,7 @@ class MyController extends AbstractController
             }
         }
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
     }
 
         /**
@@ -72,7 +76,7 @@ class MyController extends AbstractController
             }
         }
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
     }
 
     /**
@@ -101,7 +105,7 @@ class MyController extends AbstractController
         }
         
 
-        return $this->redirectToRoute('latest_photos');
+        return $this->redirectToRoute('my_photos');
 
     }
 

@@ -34,7 +34,7 @@
           <a class="nav-link {% if app.request.get('_route') == 'index' %}active{% endif %}" href="{{ path('latest_photos') }}">Najnowsze</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Moje zdjęcia</a>
+          <a class="nav-link {% if app.request.get('_route') == 'index' %}active{% endif %}" href="{{ path('my_photos') }}">Moje zdjęcia</a>
         </li>
         {% if app.user %}
         <li class="nav-item">
